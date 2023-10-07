@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onsubmit Event</title>
+    <script type="text/javascript">
+    //function Definition
+    function validate(){
+        fname=document.myform.fname.value;
+        lname=document.myform.lname.value;
+        if(fname==""){
+            alert("Please fill the first name");
+            document.myform.fname.focus();
+            return false;
+        }
+        if(lname==""){
+            alert("Please fill the Last name");
+            document.myform.lname.focus();
+            return false;
+    }else{
+        return true;
+    }
+}
+    </script>
+</head>
+<body>
+    <center>
+        <font color="green" size="6">
+            student form
+            </font>
+    <form name="myform" onsubmit="return validate()" method="post">
+    <table border="5">
+        <tr>
+            <td><b>First Name</b></td>
+           <td>
+            <input type="text" name="fname" size="10">
+            </td>
+            </tr>
+            <tr>
+            <td><b>Last Name</b></td>
+           <td>
+            <input type="text" name="lname" size="10">
+            </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="submit">
+                <input type="reset" value="Clear" size="10">
+                </td></tr>
+
+        </table>
+        </form></center>
+        </body>
+</html>

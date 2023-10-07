@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <style>
+        .signup{
+            border:100% solid #999999;
+            font:normal 100% helvetica;
+            color:#444444;
+        }
+    </style>
+    <script type="text/javascript">
+        //function declaration
+        function validation(form){
+            fail=validateFname(form.fname.value);
+            fail+=validateSurname(form.surname.value);
+            fail+=validateUsername(form.username.value);
+            fail+=validatePassword(form.password.value);
+            fail+=validateEmail(form.email.value);
+            fail+=validateAge(form.age.value);
+            if(fail==""){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <center>
+    <table class="signup" border="0" cellpadding="8" cellspacing="20" bgcolor="#eeeee">
+        <th colspan="2" align="center">Signup form</th>
+        <form method="post" onsubmit="return validation(this.form)" action="adduser.php">
+        <tr><td>Firstname</td>
+        <td><input type="text" maxlength="25" name="fname"></td>
+        </tr>
+        <tr><td>Surname</td>
+        <td><input type="text" maxlength="25" name="surname"></td>
+        </tr>
+        <tr><td>Username</td>
+        <td><input type="text" maxlength="15" name="username"></td>
+        </tr>
+        <tr><td>Password</td>
+        <td><input type="password" maxlength="25" name="password"></td>
+        </tr>
+        <tr><td>Email</td>
+        <td><input type="email" maxlength="64" name="email"></td>
+        </tr>
+        <tr><td>Age</td>
+        <td><input type="text" maxlength="3" name="age"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="signup">
+            </td>
+        </tr>
+        </form>
+    </table>
+    </center>
+</body>
+</html>
